@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dev Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fingerprintjs2@2.1.4/dist/fingerprint2.min.js"></script>
+    <style>
+        .particles-js-canvas-el {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen font-sans">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header/Navbar -->
+    <header class="fixed w-full bg-gray-900 bg-opacity-80 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-terminal text-blue-400 text-2xl"></i>
+                <span class="text-xl font-bold gradient-text">DevPort</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </nav>
+            <button class="md:hidden text-xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-gray-800 w-full py-4" id="mobile-menu">
+            <div class="flex flex-col space-y-4 px-4">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <!-- Hero Section -->
+        <section id="home" class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Developer</span></h1>
+                <h2 class="text-2xl md:text-3xl text-blue-400 mb-6">Full Stack Developer & DevOps</h2>
+                <p class="text-gray-300 mb-8 max-w-lg">Building innovative web solutions with modern technologies. Passionate about creating efficient, scalable applications with beautiful interfaces.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition">Contact Me</a>
+                    <a href="#projects" class="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg transition">View Work</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-400">
+                        <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-code text-blue-400 mr-2"></i>
+                            <span class="font-semibold">Coding Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">About Me</span></h2>
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                        <div class="w-64 h-64 rounded-lg overflow-hidden shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-12">
+                        <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                        <p class="text-gray-300 mb-6">I'm a passionate developer with over 5 years of experience in building web applications. I specialize in JavaScript frameworks (React, Vue, Node.js) and have extensive experience with cloud infrastructure and DevOps practices.</p>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-user-tie text-blue-400 mr-2"></i>
+                                <span><strong>Name:</strong> John Developer</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                                <span><strong>Email:</strong> dev@example.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-400 mr-2"></i>
+                                <span><strong>Location:</strong> San Francisco, CA</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-birthday-cake text-blue-400 mr-2"></i>
+                                <span><strong>Age:</strong> 28</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                <i class="fab fa-dev"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VPS Dashboard Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">VPS Dashboard</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Server Status Card -->
+                    <div class="bg-gray-800 rounded-xl p-6 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">Server Status</h3>
+                            <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+                        </div>
+                        <p class="text-gray-300 mb-4">All systems operational</p>
+                        <div class="flex items-center text-sm text-gray-400">
+                            <i class="fas fa-server mr-2"></i>
+                            <span>Uptime: <span id="uptime">99.98%</span></span>
+                        </div>
+                    </div>
+
+                    <!-- CPU Usage Card -->
+                    <div class="bg-gray-800 rounded-xl p-6 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">CPU Usage</h3>
+                            <i class="fas fa-microchip text-blue-400"></i>
+                        </div>
+                        <div class="mb-2">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 35%" id="cpu-usage"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-400">
+                            <span>4 Cores</span>
+                            <span id="cpu-percent">35%</span>
+                        </div>
+                    </div>
+
+                    <!-- Memory Usage Card -->
+                    <div class="bg-gray-800 rounded-xl p-6 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">Memory</h3>
+                            <i class="fas fa-memory text-purple-400"></i>
+                        </div>
+                        <div class="mb-2">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%" id="memory-usage"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-400">
+                            <span>8GB Total</span>
+                            <span id="memory-percent">4.8GB (60%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Storage Usage Card -->
+                    <div class="bg-gray-800 rounded-xl p-6 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-semibold">Storage</h3>
+                            <i class="fas fa-hdd text-yellow-400"></i>
+                        </div>
+                        <div class="mb-2">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 45%" id="storage-usage"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-400">
+                            <span>100GB Total</span>
+                            <span id="storage-percent">45GB (45%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Controls -->
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Server Controls</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-power-off mr-2"></i> Restart
+                        </button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-play mr-2"></i> Start
+                        </button>
+                        <button class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-stop mr-2"></i> Stop
+                        </button>
+                        <button class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition flex items-center justify-center">
+                            <i class="fas fa-terminal mr-2"></i> SSH
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Projects Section -->
+        <section id="projects" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">GitHub Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="github-projects">
+                    <!-- Projects will be loaded here via GitHub API -->
+                    <div class="text-center py-8">
+                        <i class="fas fa-spinner fa-spin text-4xl text-blue-400 mb-4"></i>
+                        <p>Loading GitHub projects...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">My Skills</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>JavaScript/TypeScript</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>React & Vue</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Node.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Docker & Kubernetes</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Problem Solving</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Team Collaboration</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Project Management</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span>Communication</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-800 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center"><span class="gradient-text">Get In Touch</span></h2>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                        <p class="text-gray-300 mb-6">Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-400 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-300">dev@example.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-400 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-300">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-300">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-700 hover:bg-gray-600 p-3 rounded-full transition">
+                                    <i class="fab fa-dev"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block mb-2">Your Name</label>
+                                    <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block mb-2">Your Email</label>
+                                    <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition w-full md:w-auto">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-terminal text-blue-400 text-xl"></i>
+                        <span class="text-lg font-bold gradient-text">DevPort</span>
+                    </div>
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition">About</a>
+                    <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                    <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+                </div>
+                <div class="text-sm text-gray-400" id="copyright">
+                    &copy; <span id="year"></span> All rights reserved. Visitor ID: <span id="visitor-id">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#3b82f6"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#3b82f6",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+            // Simulate VPS stats changing
+            function simulateVPSStats() {
+                // CPU
+                const cpuPercent = Math.floor(Math.random() * 30) + 20;
+                document.getElementById('cpu-usage').style.width = `${cpuPercent}%`;
+                document.getElementById('cpu-percent').textContent = `${cpuPercent}%`;
+                
+                // Memory
+                const memPercent = Math.floor(Math.random() * 30) + 40;
+                document.getElementById('memory-usage').style.width = `${memPercent}%`;
+                document.getElementById('memory-percent').textContent = `${Math.round(8 * memPercent / 100)}GB (${memPercent}%)`;
+                
+                // Storage
+                const storagePercent = Math.floor(Math.random() * 10) + 40;
+                document.getElementById('storage-usage').style.width = `${storagePercent}%`;
+                document.getElementById('storage-percent').textContent = `${storagePercent}GB (${storagePercent}%)`;
+                
+                setTimeout(simulateVPSStats, 3000);
+            }
+            
+            simulateVPSStats();
+
+            // Get visitor fingerprint
+            if (window.requestIdleCallback) {
+                requestIdleCallback(function() {
+                    Fingerprint2.get(function(components) {
+                        const values = components.map(function(component) { return component.value });
+                        const fingerprint = Fingerprint2.x64hash128(values.join(''), 31);
+                        document.getElementById('visitor-id').textContent = fingerprint.substring(0, 8);
+                    });
+                });
+            } else {
+                setTimeout(function() {
+                    Fingerprint2.get(function(components) {
+                        const values = components.map(function(component) { return component.value });
+                        const fingerprint = Fingerprint2.x64hash128(values.join(''), 31);
+                        document.getElementById('visitor-id').textContent = fingerprint.substring(0, 8);
+                    });
+                }, 500);
+            }
+
+            // Load GitHub projects
+            fetch('https://api.github.com/users/octocat/repos?sort=updated&per_page=6')
+                .then(response => response.json())
+                .then(data => {
+                    const projectsContainer = document.getElementById('github-projects');
+                    
+                    if (data.message && data.message.includes("API rate limit exceeded")) {
+                        projectsContainer.innerHTML = `
+                            <div class="col-span-3 text-center py-8">
+                                <i class="fas fa-exclamation-triangle text-yellow-400 text-4xl mb-4"></i>
+                                <p class="text-lg">GitHub API rate limit exceeded. Please check back later.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    if (data.length === 0) {
+                        projectsContainer.innerHTML = `
+                            <div class="col-span-3 text-center py-8">
+                                <i class="fas fa-folder-open text-blue-400 text-4xl mb-4"></i>
+                                <p class="text-lg">No public repositories found.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    let projectsHTML = '';
+                    
+                    data.forEach(project => {
+                        projectsHTML += `
+                            <div class="bg-gray-700 rounded-xl overflow-hidden card-hover">
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <h3 class="text-xl font-semibold truncate">${project.name}</h3>
+                                        <span class="bg-gray-600 text-xs px-2 py-1 rounded-full">${project.language || 'N/A'}</span>
+                                    </div>
+                                    <p class="text-gray-300 mb-6 line-clamp-2">${project.description || 'No description provided.'}</p>
+                                    <div class="flex justify-between text-sm text-gray-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-star mr-1"></i>
+                                            <span>${project.stargazers_count}</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-code-branch mr-1"></i>
+                                            <span>${project.forks_count}</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-eye mr-1"></i>
+                                            <span>${project.watchers_count}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="${project.html_url}" target="_blank" class="block bg-gray-800 text-center py-3 text-blue-400 hover:text-blue-300 transition">
+                                    View on GitHub <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    projectsContainer.innerHTML = projectsHTML;
+                })
+                .catch(error => {
+                    console.error('Error fetching GitHub projects:', error);
+                    const projectsContainer = document.getElementById('github-projects');
+                    projectsContainer.innerHTML = `
+                        <div class="col-span-3 text-center py-8">
+                            <i class="fas fa-exclamation-triangle text-red-400 text-4xl mb-4"></i>
+                            <p class="text-lg">Failed to load GitHub projects. Please try again later.</p>
+                        </div>
+                    `;
+                });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
