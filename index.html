@@ -68,6 +68,13 @@
             background-color: rgba(27, 27, 27, 0.11);
             backdrop-filter: blur(2px);
             border-radius: 20px;
+            /* Estilos para o efeito de fade-in */
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .profile-container.visible {
+            opacity: 1;
         }
         
         .background-overlay {
@@ -76,18 +83,29 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        /* Animação para o texto de entrada piscar */
+        @keyframes blink {
+            50% { opacity: 0.6; }
+        }
+        .blinking-text {
+            animation: blink 1.5s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen overflow-x-hidden">
     <!-- Background with overlay -->
     <div class="background-overlay fixed inset-0 z-0 opacity-70"></div>
+
+    <!-- Áudio da música -->
+    <audio id="backgroundMusic" src="https://r2.guns.lol/15a4dd6d-ab71-4a70-bd64-1b822ccf1fcc.mp3" loop></audio>
     
     <!-- Main content -->
     <div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4">
         <!-- Click to enter overlay -->
         <div class="fixed inset-0 flex items-center justify-center z-20 cursor-pointer" id="enterOverlay">
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-bold mb-4">click to enter...</div>
+                <div class="text-3xl md:text-4xl font-bold mb-4 blinking-text">click to enter...</div>
             </div>
         </div>
         
@@ -99,7 +117,6 @@
                      alt="Profile Avatar" 
                      class="w-32 h-32 md:w-40 md:h-40 rounded-full mb-4 object-cover border-2 border-gray-800"/>
                 
-                <!-- <h1 class="text-4xl md:text-5xl font-semibold username-glow mb-2">𝕂𝟙𝕃𝕃𝟛ℝ</h1> -->
                 <h1 class="text-4xl md:text-5xl font-semibold username-glow mb-2">𝕂𝟙𝕃𝕃𝟛ℝ</h1>
                 <h3 class="text-xl md:text-2xl font-medium opacity-80">We Watch You</h3>
             </div>
@@ -216,55 +233,43 @@
         function createSnow() {
             const snowflakes = 80;
             const container = document.body;
-            
             for (let i = 0; i < snowflakes; i++) {
                 const snowflake = document.createElement('div');
                 snowflake.className = 'snowflake absolute rounded-full bg-white opacity-80';
-                
-                // Random size
                 const size = Math.random() * 5 + 2;
                 snowflake.style.width = `${size}px`;
                 snowflake.style.height = `${size}px`;
-                
-                // Random position
                 snowflake.style.left = `${Math.random() * 100}vw`;
                 snowflake.style.top = '-10px';
-                
-                // Random animation
                 const duration = Math.random() * 10 + 5;
                 snowflake.style.animation = `fall ${duration}s linear infinite`;
-                
-                // Random delay
                 snowflake.style.animationDelay = `${Math.random() * 5}s`;
-                
                 container.appendChild(snowflake);
             }
-            
-            // Add twinkle effect
             const style = document.createElement('style');
             style.textContent = `
-                @keyframes fall {
-                    to {
-                        transform: translateY(100vh);
-                    }
-                }
-                
-                @keyframes twinkle {
-                    0%, 100% { opacity: 0.8; }
-                    50% { opacity: 0.2; }
-                }
-                
-                .snowflake {
-                    animation: fall linear infinite, twinkle 3s ease-in-out infinite;
-                }
+                @keyframes fall { to { transform: translateY(100vh); } }
+                @keyframes twinkle { 0%, 100% { opacity: 0.8; } 50% { opacity: 0.2; } }
+                .snowflake { animation: fall linear infinite, twinkle 3s ease-in-out infinite; }
             `;
             document.head.appendChild(style);
         }
         
         // Click to enter functionality
         document.getElementById('enterOverlay').addEventListener('click', function() {
-            this.style.display = 'none';
-            document.getElementById('profileContainer').classList.remove('hidden');
+            // Esconde a sobreposição de entrada
+            this.style.opacity = '0';
+            setTimeout(() => { this.style.display = 'none'; }, 500);
+            
+            // Mostra o container do perfil
+            const profileContainer = document.getElementById('profileContainer');
+            profileContainer.classList.remove('hidden');
+            setTimeout(() => { profileContainer.classList.add('visible'); }, 10);
+
+            // Toca a música
+            document.getElementById('backgroundMusic').play();
+
+            // Cria o efeito de neve
             createSnow();
         });
         
