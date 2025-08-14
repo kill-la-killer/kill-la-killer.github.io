@@ -1,64 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preload" as="image" href="https://r2.guns.lol/54dd1f32-0ac1-48c7-b11e-8c37377ce65c.gif"/>
+    <title>@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol</title>
+    <meta name="description" content="We Watch You"/>
+    <meta name="author" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/>
+    <meta property="og:title" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/>
+    <meta property="og:description" content="We Watch You"/>
+    <meta property="og:image" content="https://og.guns.lol/api/og?username=script.js&amp;t=1755211495615"/>
+    <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/>
+    <meta name="twitter:description" content="We Watch You"/>
+    <meta name="twitter:image" content="https://og.guns.lol/api/og?username=script.js&amp;t=1755211495615"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            cursor: url(https://r2.guns.lol/fde1933c-ed3d-40fa-9e81-559f2c1b25dd.webp) 16 16, auto !important;
+            font-family: 'Satoshi', sans-serif;
+        }
+        
+        ::-moz-selection {
+            background: #fcf5f5;
+            color: #080808;
+        }
+        
+        ::selection {
+            background: #fcf5f5;
+            color: #080808;
+        }
+        
+        .username-glow {
+            text-shadow: 0px 0px 16.5px #fcf5f5;
+            background-image: url(https://assets.guns.lol/sparkle_black.gif);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .social-icon {
+            color: #ffffff !important;
+            filter: drop-shadow(#ffffff 1px 0 7px) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .enter-button {
+            background: rgba(252, 245, 245, 0.22);
+            border: 2px solid rgba(252, 245, 245, 0.12);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .enter-button:hover {
+            background: rgba(252, 245, 245, 0.32);
+            border: 2px solid rgba(252, 245, 245, 0.25);
+        }
+        
+        .profile-container {
+            background-color: rgba(27, 27, 27, 0.11);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+        }
+        
+        .background-overlay {
+            background-image: url(https://r2.guns.lol/68bf4ac5-c623-4b3e-a0f3-7d84828e783f.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen overflow-x-hidden">
+    <!-- Background with overlay -->
+    <div class="background-overlay fixed inset-0 z-0 opacity-70"></div>
+    
+    <!-- Main content -->
+    <div class="relative z-10 min-h-screen flex flex-col items-center justify-center p-4">
+        <!-- Click to enter overlay -->
+        <div class="fixed inset-0 flex items-center justify-center z-20 cursor-pointer" id="enterOverlay">
+            <div class="text-center">
+                <div class="text-3xl md:text-4xl font-bold mb-4">click to enter...</div>
+            </div>
+        </div>
+        
+        <!-- Profile container (hidden initially) -->
+        <div class="profile-container max-w-2xl w-full p-8 md:p-10 hidden" id="profileContainer">
+            <!-- Avatar and username -->
+            <div class="flex flex-col items-center mb-8">
+                <img src="https://r2.guns.lol/54dd1f32-0ac1-48c7-b11e-8c37377ce65c.gif" 
+                     alt="Profile Avatar" 
+                     class="w-32 h-32 md:w-40 md:h-40 rounded-full mb-4 object-cover border-2 border-gray-800"/>
+                
+                <!-- <h1 class="text-4xl md:text-5xl font-semibold username-glow mb-2">𝕂𝟛𝕃𝕃𝔼ℝ</h1> -->
+                <h1 class="text-4xl md:text-5xl font-semibold username-glow mb-2">K3LLER</h1>
+                <h3 class="text-xl md:text-2xl font-medium opacity-80">We Watch You</h3>
+            </div>
+            
+            <!-- Social links -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <!-- Discord -->
+                <a href="https://discord.com/settings" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1.96 4.26 20.03 15.53">
+                        <path fill="currentColor" d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1a14.66 14.66 0 0 0-4.58 0a10.14 10.14 0 0 0-.53-1.1a16 16 0 0 0-4.13 1.3a17.33 17.33 0 0 0-3 11.59a16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83a3.39 3.39 0 0 0 .42-.33a11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84a12.41 12.41 0 0 0 1.08 1.78a16.44 16.44 0 0 0 5.06-2.59a17.22 17.22 0 0 0-3-11.59a16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.93 1.93 0 0 1 1.8 2a1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.92 1.92 0 0 1 1.8 2a1.92 1.92 0 0 1-1.8 2z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://facebook.com/messages" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2 2 20 19.95">
+                        <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path>
+                    </svg>
+                </a>
+                
+                <!-- Twitter/X -->
+                <a href="https://x.com/logout" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="26.8 48 460.2 416">
+                        <path fill="currentColor" d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"></path>
+                    </svg>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://youtube.com/opensearch" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1.99 5 20.01 14.01">
+                        <path fill="currentColor" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Twitch -->
+                <a href="https://twitch.tv/giftcard/buy" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1.71 0 20.57 24">
+                        <path fill="currentColor" d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Spotify -->
+                <a href="https://open.spotify.com/collection/playlists" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2.02 2.02 19.98 19.98">
+                        <path fill="currentColor" d="M12.01 2.019c-5.495 0-9.991 4.496-9.991 9.991c0 5.494 4.496 9.99 9.991 9.99c5.494 0 9.99-4.496 9.99-9.99c0-5.495-4.446-9.991-9.99-9.991zm4.595 14.436c-.199.299-.549.4-.85.201c-2.349-1.45-5.296-1.75-8.793-.951c-.348.102-.648-.148-.748-.449c-.101-.35.149-.648.45-.749c3.795-.85 7.093-.499 9.69 1.1c.35.149.4.548.251.848zm1.2-2.747c-.251.349-.7.499-1.051.249c-2.697-1.646-6.792-2.148-9.939-1.148c-.398.101-.85-.1-.949-.498c-.101-.402.1-.852.499-.952c3.646-1.098 8.143-.548 11.239 1.351c.3.149.45.648.201.998zm.099-2.799c-3.197-1.897-8.542-2.097-11.59-1.146a.938.938 0 0 1-1.148-.6a.937.937 0 0 1 .599-1.151c3.547-1.049 9.392-.85 13.089 1.351c.449.249.599.849.349 1.298c-.25.35-.849.498-1.299.248z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/direct/inbox/" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="3 2.98 18.01 18.04">
+                        <path fill="currentColor" d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216a4.61 4.61 0 0 0-2.633-2.633a6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42a4.607 4.607 0 0 0-2.633 2.633a6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632a6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419a4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187c.043-.962.056-1.267.056-3.71c-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078a1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path>
+                        <circle cx="11.994" cy="11.979" r="3.003" fill="currentColor"></circle>
+                    </svg>
+                </a>
+                
+                <!-- TikTok -->
+                <a href="https://tiktok.com/settings/privacy" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="3.2 2 17.43 19.99">
+                        <path fill="currentColor" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Telegram -->
+                <a href="https://t.me/k/#/im" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2 3.61 20.02 16.79">
+                        <path fill="currentColor" d="m20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path>
+                    </svg>
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/new" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2.05 2 19.95 19.46">
+                        <path fill="currentColor" fill-rule="evenodd" d="M12.01 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.821 9.465c.499.09.679-.217.679-.481c0-.237-.008-.865-.011-1.696c-2.775.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.605.069-.605c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021c.545 1.372.203 2.387.099 2.64c.64.696 1.024 1.587 1.024 2.675c0 3.833-2.33 4.675-4.552 4.922c.355.308.675.916.675 1.846c0 1.334-.012 2.41-.012 2.737c0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974C22 6.465 17.535 2 12.026 2z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                
+                <!-- Roblox -->
+                <a href="https://roblox.com/catalog" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0.16 0 23.68 24">
+                        <path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path>
+                    </svg>
+                </a>
+                
+                <!-- Reddit -->
+                <a href="https://reddit.com/message/unread/" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="2 2 20 20">
+                        <circle cx="9.67" cy="13" r="1.001" fill="currentColor"></circle>
+                        <path fill="currentColor" d="M14.09 15.391A3.28 3.28 0 0 1 12 16a3.271 3.271 0 0 1-2.081-.63a.27.27 0 0 0-.379.38c.71.535 1.582.809 2.471.77a3.811 3.811 0 0 0 2.469-.77v.04a.284.284 0 0 0 .006-.396a.28.28 0 0 0-.396-.003zm.209-3.351a1 1 0 0 0 0 2l-.008.039c.016.002.033 0 .051 0a1 1 0 0 0 .958-1.038a1 1 0 0 0-1.001-1.001z"></path>
+                        <path fill="currentColor" d="M12 2C6.479 2 2 6.477 2 12c0 5.521 4.479 10 10 10s10-4.479 10-10c0-5.523-4.479-10-10-10zm5.859 11.33c.012.146.012.293 0 .439c0 2.24-2.609 4.062-5.83 4.062s-5.83-1.82-5.83-4.062a2.681 2.681 0 0 1 0-.439a1.46 1.46 0 0 1-.455-2.327a1.458 1.458 0 0 1 2.063-.063a7.145 7.145 0 0 1 3.899-1.23l.743-3.47v-.004A.313.313 0 0 1 12.82 6l2.449.49a1.001 1.001 0 1 1-.131.61L13 6.65l-.649 3.12a7.123 7.123 0 0 1 3.85 1.23a1.46 1.46 0 0 1 2.469 1c.01.563-.307 1.08-.811 1.33z"></path>
+                    </svg>
+                </a>
 
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="https://r2.guns.lol/54dd1f32-0ac1-48c7-b11e-8c37377ce65c.gif"/><link rel="stylesheet" href="/_next/static/css/ff9399e606869db4.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/70796fed0f690c8f.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/6054a835c0611161.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-b34e4bd496496897.js"/><script src="/_next/static/chunks/4bd1b696-5cc00fdd89cac993.js" async=""></script><script src="/_next/static/chunks/1684-ccd0ab83cbafdc8f.js" async=""></script><script src="/_next/static/chunks/main-app-c95b87e4dbcdea77.js" async=""></script><script src="/_next/static/chunks/app/layout-c453b8d241eccdc5.js" async=""></script><script src="/_next/static/chunks/6874-1335ddc9318d7318.js" async=""></script><script src="/_next/static/chunks/app/not-found-d2101ad149432efd.js" async=""></script><script src="/_next/static/chunks/5322-a31cc2ef467c25bd.js" async=""></script><script src="/_next/static/chunks/8306-ea0440b802e2d283.js" async=""></script><script src="/_next/static/chunks/540-dc9b94456c69f193.js" async=""></script><script src="/_next/static/chunks/1100-1ef0397e08238c46.js" async=""></script><script src="/_next/static/chunks/9349-a0a548d327b13e51.js" async=""></script><script src="/_next/static/chunks/6990-20968a621a3be1f5.js" async=""></script><script src="/_next/static/chunks/9677-fb2b81040d185490.js" async=""></script><script src="/_next/static/chunks/4923-5305854283867663.js" async=""></script><script src="/_next/static/chunks/6696-314670b005b014c4.js" async=""></script><script src="/_next/static/chunks/4203-f94d87c0d971cf0c.js" async=""></script><script src="/_next/static/chunks/8011-a3879efb92aff950.js" async=""></script><script src="/_next/static/chunks/3720-296af9f08112de30.js" async=""></script><script src="/_next/static/chunks/4999-ba0083c7801c7207.js" async=""></script><script src="/_next/static/chunks/app/%5Busername%5D/page-0e87c26b285ce282.js" async=""></script><link rel="preload" href="https://sa.guns.lol/latest.js" as="script"/><link rel="preload" href="https://assets.guns.lol/guns_storm.js" as="script"/><link rel="preload" href="https://assets.guns.lol/cursor-effects.js" as="script"/><link rel="preload" href="https://challenges.cloudflare.com/turnstile/v0/api.js" as="script"/><link rel="apple-touch-icon" sizes="180x180" href="https://assets.guns.lol/favicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="https://assets.guns.lol/favicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="https://assets.guns.lol/favicon/favicon-16x16.png"/><link rel="manifest" href="https://assets.guns.lol/favicon/site.webmanifest"/><meta name="theme-color" content="#fcf5f5"/><link href="https://assets.guns.lol/fonts/X6XYTKIVDUW7GZTZPZNN4EUM5KH54KHF.css" rel="stylesheet"/><title>@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol</title><meta name="description" content="We Watch You"/><meta name="author" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/><meta property="og:title" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/><meta property="og:description" content="We Watch You"/><meta property="og:image" content="https://og.guns.lol/api/og?username=script.js&amp;t=1755211495615"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol"/><meta name="twitter:description" content="We Watch You"/><meta name="twitter:image" content="https://og.guns.lol/api/og?username=script.js&amp;t=1755211495615"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div class="n9Jn1x_244378cdd5913f278c3a" style="background-image:url(https://r2.guns.lol/68bf4ac5-c623-4b3e-a0f3-7d84828e783f.webp)"></div><div class="yRVb3w_4ac5c10f247eb261df8a"><div class="tz1elc_dbdc0f63fcf9ce25e8c2" style="font-weight:700;font-size:30px">click to enter...</div></div><script>(self.__next_s=self.__next_s||[]).push(["https://assets.guns.lol/guns_storm.js",{"id":"_gunsstorm"}])</script><script>(self.__next_s=self.__next_s||[]).push([0,{"children":"\n                                snowStorm.snowColor = '#fcf5f5';\n                                snowStorm.flakesMaxActive = 80;\n                                snowStorm.useTwinkleEffect = true;\n                                snowStorm.autoStart = true;\n                                snowStorm.freezeOnBlur = false;\n                                snowStorm.excludeMobile = false;\n                            ","id":"_gunsstormcode"}])</script><script>(self.__next_s=self.__next_s||[]).push(["https://assets.guns.lol/cursor-effects.js",{"id":"_cursor"}])</script><style>
-                    * {
-                      cursor: url(https://r2.guns.lol/fde1933c-ed3d-40fa-9e81-559f2c1b25dd.webp) 16 16, auto !important;
+                <!-- Pornhub -->
+                <a href="https://pornhub.com/user/delete_account" target="_blank" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M4.8 19.2h2.8v-6h4.6c2.6 0 4.1-1.2 4.1-3.4c0-1.5-.9-2.5-2.4-2.8V7c1.8.3 3.1 1.6 3.1 3.2c0 2.8-1.9 4.2-4.8 4.2H7.6v4.8zm11.7 0h2.8V4.8h-2.8v14.4z"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Page views counter -->
+            <div class="absolute bottom-4 left-4 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"></path>
+                </svg>
+                <span class="text-sm font-medium">10</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Snow effect simulation
+        function createSnow() {
+            const snowflakes = 80;
+            const container = document.body;
+            
+            for (let i = 0; i < snowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake absolute rounded-full bg-white opacity-80';
+                
+                // Random size
+                const size = Math.random() * 5 + 2;
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                
+                // Random position
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.top = '-10px';
+                
+                // Random animation
+                const duration = Math.random() * 10 + 5;
+                snowflake.style.animation = `fall ${duration}s linear infinite`;
+                
+                // Random delay
+                snowflake.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(snowflake);
+            }
+            
+            // Add twinkle effect
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fall {
+                    to {
+                        transform: translateY(100vh);
                     }
-                    </style><style>
-                ::-moz-selection {
-                    background: #fcf5f5;
-                    color: #080808;
                 }
-                ::selection {
-                    background: #fcf5f5;
-                    color: #080808;
+                
+                @keyframes twinkle {
+                    0%, 100% { opacity: 0.8; }
+                    50% { opacity: 0.2; }
                 }
-                </style><div class="sScRLn_e606f195670897bc74a6" style="background-color:#080808"></div><div style="--presenceUsernameColor:#fcf5f5;--presenceStatusColor:rgba(252, 245, 245, 0.7);--presenceContainerBackground:rgba(252, 245, 245, 0.07);--presenceContainerBorder:2px solid rgba(252, 245, 245, 0.05);--discordServerMembers:rgba(252, 245, 245, 0.6);--secondTabBackground:rgba(252, 245, 245, 0.07);--secondTabBorder:2px solid rgba(252, 245, 245, 0.05);--discordMissingIcon:rgba(252, 245, 245, 0.25);--modernLayoutSeperator:rgba(252, 245, 245, 0.12);--modernLayoutSeperatorBorder:rgba(252, 245, 245, 0.12);--discordAvatarBorder:2px solid rgba(27, 27, 27, 0.15);--badgeContainerBackground:rgba(252, 245, 245, 0.08);--badgeContainerBorder:2px solid rgba(252, 245, 245, 0.04);--userBadge:20.5px;--textColor:#fcf5f5;--textColorDarker:rgba(252, 245, 245, 0.5);--iconColor:#ffffff;--backgroundColor:#080808;--joinStatus:rgba(252, 245, 245, 0.65);--audioPlayerBar:rgba(252, 245, 245, 0.35);--avatarBorder:2px solid rgba(27, 27, 27, 0.4);--containerColor:rgba(27, 27, 27, 0.11);--containerBlur:2px;--containerRadius:20px;--containerWidth:40rem;--containerPadding:35px 15px;--volumeBackgroundcolor:rgba(27, 27, 27, 0.11);--volumeBorder:2px solid rgba(27, 27, 27, 0.099);--colorUsernameGlow:0px 0px 16.5px #fcf5f5;--usernameEffects:url(https://assets.guns.lol/sparkle_black.gif);--buttonBackground:rgba(252, 245, 245, 0.22);--buttonBorder:2px solid rgba(252, 245, 245, 0.12);--buttonRadius:12px;--buttonAlign:center;--buttonBackgroundHover:rgba(252, 245, 245, 0.32);--buttonBorderHover:2px solid rgba(252, 245, 245, 0.25);--buttonUrlColor:rgba(252, 245, 245, 0.65);--profileViewsContainerBorder:2px solid rgba(255, 255, 255, 0.088);--templatePreviewContainerBackground:rgba(27, 27, 27, 0.4);--platformTextColor:rgba(252, 245, 245, 0.4);--secondTabWidgetDescription:rgba(252, 245, 245, 0.6);--audioIconBackground:rgba(252, 245, 245, 0.2);--progessBarFull:rgba(252, 245, 245, 0.3);--progessBarPlaying:#fcf5f5;--controlButtonsOther:rgba(252, 245, 245, 0.5);--controlButtonPlaying:#fcf5f5;--controlTextColor:rgba(252, 245, 245, 0.7);--modernLayoutBottomLeftDivider:rgba(252, 245, 245, 0.14);--sleekLayoutTopRightDivider:rgba(252, 245, 245, 0.14)"><div class="tblzYX_8d25fbd2ec018e7f3333"><div class="uwYFmB_089e78ae7261139e29df"><div class="wbQul1_35f2a4c5b48e5f22cb72" style="position:fixed"><div class="vUb9nx_02af604a2f0bd5f52a08 xYtZVh_85176f7ad5dd05cd2a8a"><div class="fxhYyF_d0dc3a8bbeb8294cbc40"><div class="xyBmyw_85a5034ad3ee4f215066"><img src="https://r2.guns.lol/54dd1f32-0ac1-48c7-b11e-8c37377ce65c.gif" alt="" class="a3WcLc_229bedc9b07046bf61d1 false"/></div><div class="sbXTUc_b7ae81993acc636a36eb false"><h1 class="w3lZZc_f8ef53b912061d92eab6 false" style="font-weight:600;font-size:39.5px">𝕂𝟛𝕃𝕃𝔼ℝ</h1><h3 class="xQ1Wt5_1fe480aaf30e20184c29" style="font-weight:570;font-size:19px">We Watch You</h3></div><div class="iG1b5N_b4c509d547ebc284a4d0 false"><div class="hZlSYt_87e32c7ed391a936e81d"><div class="cNeTYn_f868b47b56a17c140676 k0GY1m_8cadb2f2abb9edb616fd"><style>
-                                    .k0GY1m_8cadb2f2abb9edb616fd svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://discord.com/settings"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="1.96 4.26 20.03 15.53"><path fill="currentColor" d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1a14.66 14.66 0 0 0-4.58 0a10.14 10.14 0 0 0-.53-1.1a16 16 0 0 0-4.13 1.3a17.33 17.33 0 0 0-3 11.59a16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83a3.39 3.39 0 0 0 .42-.33a11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84a12.41 12.41 0 0 0 1.08 1.78a16.44 16.44 0 0 0 5.06-2.59a17.22 17.22 0 0 0-3-11.59a16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.93 1.93 0 0 1 1.8 2a1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2a1.93 1.93 0 0 1 1.8-2a1.92 1.92 0 0 1 1.8 2a1.92 1.92 0 0 1-1.8 2z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 qYBO3L_c3bc08f8112281a4ee5d"><style>
-                                    .qYBO3L_c3bc08f8112281a4ee5d svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://facebook.com/messages"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2 2 20 19.95"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 gbF3WU_a2e41c606706425d6eb9"><style>
-                                    .gbF3WU_a2e41c606706425d6eb9 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://x.com/logout"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="26.8 48 460.2 416"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 kw3Gb2_78ef442c5c689282a964"><style>
-                                    .kw3Gb2_78ef442c5c689282a964 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://youtube.com/opensearch"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="1.99 5 20.01 14.01"><path fill="currentColor" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765c1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6l5.207 3.005l-5.212 2.995z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 ln2ORG_cfe7672ebb60db49b331"><style>
-                                    .ln2ORG_cfe7672ebb60db49b331 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://twitch.tv/giftcard/buy"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="1.71 0 20.57 24"><path fill="currentColor" d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 jY1xpR_97f0b821e2040f189997"><style>
-                                    .jY1xpR_97f0b821e2040f189997 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://open.spotify.com/collection/playlists"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.02 2.02 19.98 19.98"><path fill="currentColor" d="M12.01 2.019c-5.495 0-9.991 4.496-9.991 9.991c0 5.494 4.496 9.99 9.991 9.99c5.494 0 9.99-4.496 9.99-9.99c0-5.495-4.446-9.991-9.99-9.991zm4.595 14.436c-.199.299-.549.4-.85.201c-2.349-1.45-5.296-1.75-8.793-.951c-.348.102-.648-.148-.748-.449c-.101-.35.149-.648.45-.749c3.795-.85 7.093-.499 9.69 1.1c.35.149.4.548.251.848zm1.2-2.747c-.251.349-.7.499-1.051.249c-2.697-1.646-6.792-2.148-9.939-1.148c-.398.101-.85-.1-.949-.498c-.101-.402.1-.852.499-.952c3.646-1.098 8.143-.548 11.239 1.351c.3.149.45.648.201.998zm.099-2.799c-3.197-1.897-8.542-2.097-11.59-1.146a.938.938 0 0 1-1.148-.6a.937.937 0 0 1 .599-1.151c3.547-1.049 9.392-.85 13.089 1.351c.449.249.599.849.349 1.298c-.25.35-.849.498-1.299.248z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 w102c9_054b200b8dbbc7d63e06"><style>
-                                    .w102c9_054b200b8dbbc7d63e06 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://instagram.com/direct/inbox/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="3 2.98 18.01 18.04"><path fill="currentColor" d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216a4.61 4.61 0 0 0-2.633-2.633a6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42a4.607 4.607 0 0 0-2.633 2.633a6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632a6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419a4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187c.043-.962.056-1.267.056-3.71c-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078a1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003" fill="currentColor"></circle></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 q1cB0U_41d205e0e5755e844659"><style>
-                                    .q1cB0U_41d205e0e5755e844659 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://tiktok.com/settings/privacy"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="3.2 2 17.43 19.99"><path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74a2.89 2.89 0 0 1 2.31-4.64a2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 xtmeny_c653568133149442be47"><style>
-                                    .xtmeny_c653568133149442be47 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://t.me/k/#/im"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2 3.61 20.02 16.79"><path fill="currentColor" d="m20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 hc1GXl_e565c80a5053c026f582"><style>
-                                    .hc1GXl_e565c80a5053c026f582 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://github.com/new"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2.05 2 19.95 19.46"><path fill="currentColor" fill-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974c0 4.406 2.857 8.145 6.821 9.465c.499.09.679-.217.679-.481c0-.237-.008-.865-.011-1.696c-2.775.602-3.361-1.338-3.361-1.338c-.452-1.152-1.107-1.459-1.107-1.459c-.905-.619.069-.605.069-.605c1.002.07 1.527 1.028 1.527 1.028c.89 1.524 2.336 1.084 2.902.829c.091-.645.351-1.085.635-1.334c-2.214-.251-4.542-1.107-4.542-4.93c0-1.087.389-1.979 1.024-2.675c-.101-.253-.446-1.268.099-2.64c0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336a9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021c.545 1.372.203 2.387.099 2.64c.64.696 1.024 1.587 1.024 2.675c0 3.833-2.33 4.675-4.552 4.922c.355.308.675.916.675 1.846c0 1.334-.012 2.41-.012 2.737c0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974C22 6.465 17.535 2 12.026 2z" clip-rule="evenodd"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 qY1Zny_6799432dd94e0fce2df8"><style>
-                                    .qY1Zny_6799432dd94e0fce2df8 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://roblox.com/catalog"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0.16 0 23.68 24"><path fill="currentColor" d="M5.164 0L.16 18.928L18.836 24L23.84 5.072Zm8.747 15.354l-5.219-1.417l1.399-5.29l5.22 1.418l-1.4 5.29z"></path></svg></a></div><div class="cNeTYn_f868b47b56a17c140676 nBxz1Z_2691da97999b7a503074"><style>
-                                    .nBxz1Z_2691da97999b7a503074 svg {
-                                        color: #ffffff!important;
-                                        filter: drop-shadow(#ffffff 1px 0 7px)!important;
-                                    }</style><a target="_blank" href="https://reddit.com/message/unread/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="2 2 20 20"><circle cx="9.67" cy="13" r="1.001" fill="currentColor"></circle><path fill="currentColor" d="M14.09 15.391A3.28 3.28 0 0 1 12 16a3.271 3.271 0 0 1-2.081-.63a.27.27 0 0 0-.379.38c.71.535 1.582.809 2.471.77a3.811 3.811 0 0 0 2.469-.77v.04a.284.284 0 0 0 .006-.396a.28.28 0 0 0-.396-.003zm.209-3.351a1 1 0 0 0 0 2l-.008.039c.016.002.033 0 .051 0a1 1 0 0 0 .958-1.038a1 1 0 0 0-1.001-1.001z"></path><path fill="currentColor" d="M12 2C6.479 2 2 6.477 2 12c0 5.521 4.479 10 10 10s10-4.479 10-10c0-5.523-4.479-10-10-10zm5.859 11.33c.012.146.012.293 0 .439c0 2.24-2.609 4.062-5.83 4.062s-5.83-1.82-5.83-4.062a2.681 2.681 0 0 1 0-.439a1.46 1.46 0 0 1-.455-2.327a1.458 1.458 0 0 1 2.063-.063a7.145 7.145 0 0 1 3.899-1.23l.743-3.47v-.004A.313.313 0 0 1 12.82 6l2.449.49a1.001 1.001 0 1 1-.131.61L13 6.65l-.649 3.12a7.123 7.123 0 0 1 3.85 1.23a1.46 1.46 0 0 1 2.469 1c.01.563-.307 1.08-.811 1.33z"></path></svg></a></div></div></div></div><script>(self.__next_s=self.__next_s||[]).push([0,{"children":"\n        const workerScript = `        \n            import init, { GunsSolver } from 'https://assets.guns.lol/pkg/_gunslolpow.js';\n            self.onmessage = async function (event) {               \n                const { ps, d, c, _n, org_ts } = event.data;\n                await init();\n                const _get_s = new GunsSolver(ps, c, parseInt(d), false, _n);\n                const ts = Math.floor(Date.now() / 1000);\n                const _tsoff = ts - Number(org_ts);\n                const tsp = ts - _tsoff;\n                const _res = await _get_s.solve_pow();    \n                if (_res !== null) {\n                    self.postMessage({ _res, ps, tsp, _n, c });\n                }\n            };\n        `;\n\n        const blob = new Blob([workerScript], { type: \"application/javascript\" });\n        const worker = new Worker(URL.createObjectURL(blob), { type: \"module\" });\n\n        worker.postMessage({\n            ps: 'b83f864720dbb3c95248f378e0778c22c8d69856e5a7f817c158be9635a',\n            d: '5',\n            c: '64132a022bcbbbdc8157b9107971eda717d1a324aa2fc72eb02d8be4221fb2d7',\n            _n: 'ZdsTtyMxbmIiQQQM',\n            org_ts: '1755211495'\n        });\n\n        worker.onmessage = async function (event) {\n            const { _res, ps, tsp, _n, c } = event.data;\n            if (_res !== undefined) {\n                await getResult(_res);\n            }\n        };\n    ","id":"_code"}])</script><div class="cf-turnstile" style="display:none" data-sitekey="0x4AAAAAAAgU7T2niLQD-TLm" data-callback="getToken"></div><div class="sBFYOw_599d5ef2ae281840bef2 false" style="bottom:12px;left:15px"><span style="font-weight:550;font-size:14px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"></path></svg> <!-- -->10</span></div></div></div></div></div></div><!--$--><!--/$--><!--$--><!--/$--><script src="/_next/static/chunks/webpack-b34e4bd496496897.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[69243,[\"7177\",\"static/chunks/app/layout-c453b8d241eccdc5.js\"],\"\"]\n3:I[56496,[\"7177\",\"static/chunks/app/layout-c453b8d241eccdc5.js\"],\"default\"]\n4:I[87555,[],\"\"]\n5:I[31295,[],\"\"]\n6:I[6874,[\"6874\",\"static/chunks/6874-1335ddc9318d7318.js\",\"4345\",\"static/chunks/app/not-found-d2101ad149432efd.js\"],\"\"]\n8:I[59665,[],\"MetadataBoundary\"]\na:I[59665,[],\"OutletBoundary\"]\nd:I[74911,[],\"AsyncMetadataOutlet\"]\nf:I[59665,[],\"ViewportBoundary\"]\n11:I[26614,[],\"\"]\n12:\"$Sreact.suspense\"\n13:I[74911,[],\"AsyncMetadata\"]\n:HL[\"/_next/static/css/ff9399e606869db4.css\",\"style\"]\n:HL[\"/_next/static/css/70796fed0f690c8f.css\",\"style\"]\n:HL[\"/_next/static/css/6054a835c0611161.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"mcncNA1zxw8K9Vm4YcTmy\",\"p\":\"\",\"c\":[\"\",\"script.js\"],\"i\":false,\"f\":[[[\"\",{\"children\":[[\"username\",\"script.js\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/ff9399e606869db4.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"href\":\"https://assets.guns.lol/fonts/X6XYTKIVDUW7GZTZPZNN4EUM5KH54KHF.css\",\"rel\":\"stylesheet\"}],[\"$\",\"$L2\",null,{\"src\":\"https://sa.guns.lol/latest.js\",\"id\":\"_sa\"}],[\"$\",\"link\",null,{\"rel\":\"apple-touch-icon\",\"sizes\":\"180x180\",\"href\":\"https://assets.guns.lol/favicon/apple-touch-icon.png\"}],[\"$\",\"link\",null,{\"rel\":\"icon\",\"type\":\"image/png\",\"sizes\":\"32x32\",\"href\":\"https://assets.guns.lol/favicon/favicon-32x32.png\"}],[\"$\",\"link\",null,{\"rel\":\"icon\",\"type\":\"image/png\",\"sizes\":\"16x16\",\"href\":\"https://assets.guns.lol/favicon/favicon-16x16.png\"}],[\"$\",\"link\",null,{\"rel\":\"manifest\",\"href\":\"https://assets.guns.lol/favicon/site.webmanifest\"}]]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"$L3\",null,{}],[\"$\",\"$L4\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L5\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"zcXbBy_acae7ef2ade572800706\",\"children\":[\"$\",\"div\",null,{\"className\":\"rnNzIn_2a483bfff065871e1e78\",\"children\":[[\"$\",\"svg\",null,{\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":\"1em\",\"height\":\"1em\",\"viewBox\":\"0 0 24 24\",\"children\":[\"$\",\"path\",null,{\"fill\":\"currentColor\",\"d\":\"M13 2v14.5h-2V2zm-2 17h2.004v2.004H11z\"}]}],[\"$\",\"h1\",null,{\"children\":\"We couldn't find this page.\"}],[\"$\",\"h3\",null,{\"children\":\"The page you are looking for doesn't exist.\"}],[\"$\",\"div\",null,{\"className\":\"pXLlFb_1091dd5bbcca39b5f847\",\"children\":[\"$\",\"$L6\",null,{\"href\":\"/\",\"children\":\"Go Home\"}]}]]}]}],[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/6054a835c0611161.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]]}]]}],{\"children\":[[\"username\",\"script.js\",\"d\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L4\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L5\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L7\",[\"$\",\"$L8\",null,{\"children\":\"$L9\"}],[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/70796fed0f690c8f.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/6054a835c0611161.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"$La\",null,{\"children\":[\"$Lb\",\"$Lc\",[\"$\",\"$Ld\",null,{\"promise\":\"$@e\"}]]}]]}],{},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"tCxT6nIX430nzJmkJiQWL\",{\"children\":[[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],null]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$11\",\"$undefined\"],\"s\":false,\"S\":false}\n"])</script><script>self.__next_f.push([1,"9:[\"$\",\"$12\",null,{\"fallback\":null,\"children\":[\"$\",\"$L13\",null,{\"promise\":\"$@14\"}]}]\nc:null\n"])</script><script>self.__next_f.push([1,"15:I[74999,[\"6874\",\"static/chunks/6874-1335ddc9318d7318.js\",\"5322\",\"static/chunks/5322-a31cc2ef467c25bd.js\",\"8306\",\"static/chunks/8306-ea0440b802e2d283.js\",\"540\",\"static/chunks/540-dc9b94456c69f193.js\",\"1100\",\"static/chunks/1100-1ef0397e08238c46.js\",\"9349\",\"static/chunks/9349-a0a548d327b13e51.js\",\"6990\",\"static/chunks/6990-20968a621a3be1f5.js\",\"9677\",\"static/chunks/9677-fb2b81040d185490.js\",\"4923\",\"static/chunks/4923-5305854283867663.js\",\"6696\",\"static/chunks/6696-314670b005b014c4.js\",\"4203\",\"static/chunks/4203-f94d87c0d971cf0c.js\",\"8011\",\"static/chunks/8011-a3879efb92aff950.js\",\"3720\",\"static/chunks/3720-296af9f08112de30.js\",\"4999\",\"static/chunks/4999-ba0083c7801c7207.js\",\"1911\",\"static/chunks/app/%5Busername%5D/page-0e87c26b285ce282.js\"],\"default\"]\n"])</script><script>self.__next_f.push([1,"7:[\"$\",\"$L15\",null,{\"data\":{\"_id\":\"680e772eb42612beb5765aa1\",\"username\":\"script.js\",\"account_created\":1745778478,\"verified\":true,\"alias\":\"\",\"config\":{\"description\":\"We Watch You\",\"color\":\"#1b1b1b\",\"text_color\":\"#fcf5f5\",\"bg_color\":\"#080808\",\"icon_color\":\"#ffffff\",\"gradient_1\":\"#881c9c\",\"gradient_2\":\"#0d0d0d\",\"profile_gradient\":false,\"presence\":\"\",\"audio\":[{\"url\":\"https://r2.guns.lol/15a4dd6d-ab71-4a70-bd64-1b822ccf1fcc.mp3\",\"title\":\"DOLBIT! · LXKERSON\",\"duration\":\"1:31\",\"selected\":true,\"id\":\"ecb92d57-55a9-40a3-9e87-f3702ba3fcbe\",\"cover\":\"https://r2.guns.lol/db0fcbde-67a6-4f95-a79b-bd2b62d37dc7.webp\"}],\"avatar\":\"https://r2.guns.lol/54dd1f32-0ac1-48c7-b11e-8c37377ce65c.gif\",\"custom_cursor\":\"https://r2.guns.lol/fde1933c-ed3d-40fa-9e81-559f2c1b25dd.webp\",\"url\":\"https://r2.guns.lol/68bf4ac5-c623-4b3e-a0f3-7d84828e783f.webp\",\"animated_title\":false,\"monochrome\":true,\"volume_control\":false,\"use_discord_avatar\":false,\"swap_colors\":false,\"social_glow\":true,\"badge_glow\":true,\"display_name\":\"𝕂𝟛𝕃𝕃𝔼ℝ\",\"background_effects\":\"rain\",\"username_effects\":\"black\",\"shuffle_audios\":false,\"audio_player\":false,\"location\":\"\",\"username_glow\":true,\"discord_avatar_decoration\":true,\"blur\":2,\"opacity\":0.11,\"page_views\":10,\"user_badges\":[],\"custom_badges\":[],\"socials\":[{\"social\":\"discord\",\"value\":\"https://discord.com/settings\",\"id\":\"034b506f-1648-4b52-8690-bdb31c48c42d\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"facebook\",\"value\":\"https://facebook.com/messages\",\"id\":\"81c9104b-6203-467b-a68e-ddcd95827ffd\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"x\",\"value\":\"https://x.com/logout\",\"id\":\"a2df75da-f052-4801-a621-539dbe464e36\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"youtube\",\"value\":\"https://youtube.com/opensearch\",\"id\":\"91a1369f-ca28-450d-b773-b715d9b7729a\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"twitch\",\"value\":\"https://twitch.tv/giftcard/buy\",\"id\":\"9d44e2b0-5510-475b-975a-cb29f8142a27\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"spotify\",\"value\":\"https://open.spotify.com/collection/playlists\",\"id\":\"434d1bf1-5f5b-409a-8c89-92d20cae4539\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"instagram\",\"value\":\"https://instagram.com/direct/inbox/\",\"id\":\"04eaa673-79f9-4532-a6ef-2564795a32f6\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"tiktok\",\"value\":\"https://tiktok.com/settings/privacy\",\"id\":\"cb328df1-2f30-4ef1-8737-685806968863\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"telegram\",\"value\":\"https://t.me/k/#/im\",\"id\":\"fd740501-61a0-4f8c-96ef-436687843978\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"github\",\"value\":\"https://github.com/new\",\"id\":\"eb121df2-0140-4cc8-980b-6dfb0dd903da\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"roblox\",\"value\":\"https://roblox.com/catalog\",\"id\":\"60c183b6-e856-4631-97c4-ba9c8f00d1a3\",\"icon\":\"\",\"mode\":\"link\"},{\"social\":\"reddit\",\"value\":\"https://reddit.com/message/unread/\",\"id\":\"0c016880-7d1f-472c-8605-95b880317aee\",\"icon\":\"\",\"mode\":\"link\"}],\"premium\":{\"effects_color\":\"#ffffff\",\"badge_color\":\"#ffffff\",\"border_color\":\"#ffffff\",\"typewriter_enabled\":false,\"typewriter_speed\":5,\"typewriter_delete_speed\":7,\"typewriter\":[],\"hide_views\":false,\"border_enabled\":false,\"second_tab_enabled\":false,\"monochrome_badges\":false,\"animation\":\"fade\",\"parallax_animation\":false,\"hide_join_date\":false,\"border_width\":2,\"border_radius\":20,\"avatar_radius\":35,\"second_tab\":{},\"cursor_effects\":\"\",\"font\":\"satoshi\",\"page_enter_text\":\"\",\"layout\":\"default\",\"banner\":\"\",\"buttons\":[],\"show_url\":false,\"text_align\":\"center\",\"button_shadow\":false,\"button_border_radius\":12,\"metadata\":{\"title\":\"\",\"description\":\"\",\"image\":\"\",\"favicon\":\"\",\"information_overlay\":false}}},\"premium\":false,\"uid\":632703,\"_C\":\"64132a022bcbbbdc8157b9107971eda717d1a324aa2fc72eb02d8be4221fb2d7\",\"_PS\":\"b83f864720dbb3c95248f378e0778c22c8d69856e5a7f817c158be9635a\",\"_ts\":1755211495,\"_n\":\"ZdsTtyMxbmIiQQQM\",\"success\":true}}]\n"])</script><script>self.__next_f.push([1,"14:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"We Watch You\"}],[\"$\",\"meta\",\"2\",{\"name\":\"author\",\"content\":\"@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol\"}],[\"$\",\"meta\",\"3\",{\"property\":\"og:title\",\"content\":\"@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:description\",\"content\":\"We Watch You\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:image\",\"content\":\"https://og.guns.lol/api/og?username=script.js\u0026t=1755211495615\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"7\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"8\",{\"name\":\"twitter:title\",\"content\":\"@𝕂𝟛𝕃𝕃𝔼ℝ | guns.lol\"}],[\"$\",\"meta\",\"9\",{\"name\":\"twitter:description\",\"content\":\"We Watch You\"}],[\"$\",\"meta\",\"10\",{\"name\":\"twitter:image\",\"content\":\"https://og.guns.lol/api/og?username=script.js\u0026t=1755211495615\"}]],\"error\":null,\"digest\":\"$undefined\"}\ne:{\"metadata\":\"$14:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n10:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"2\",{\"name\":\"theme-color\",\"content\":\"#fcf5f5\"}]]\nb:null\n"])</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96f3fac29e5ffeb7","version":"2025.8.0","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"2fe24d772b4146c9a06db032d45156c9","b":1}' crossorigin="anonymous"></script>
-</body></html>
+                
+                .snowflake {
+                    animation: fall linear infinite, twinkle 3s ease-in-out infinite;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Click to enter functionality
+        document.getElementById('enterOverlay').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('profileContainer').classList.remove('hidden');
+            createSnow();
+        });
+        
+        // Worker simulation
+        const workerScript = `
+            self.onmessage = async function (event) {               
+                const { ps, d, c, _n, org_ts } = event.data;
+                const ts = Math.floor(Date.now() / 1000);
+                const _tsoff = ts - Number(org_ts);
+                const tsp = ts - _tsoff;
+                const _res = "simulated_result";    
+                if (_res !== null) {
+                    self.postMessage({ _res, ps, tsp, _n, c });
+                }
+            };
+        `;
+        
+        const blob = new Blob([workerScript], { type: "application/javascript" });
+        const worker = new Worker(URL.createObjectURL(blob), { type: "module" });
+        
+        worker.postMessage({
+            ps: 'b83f864720dbb3c95248f378e0778c22c8d69856e5a7f817c158be9635a',
+            d: '5',
+            c: '64132a022bcbbbdc8157b9107971eda717d1a324aa2fc72eb02d8be4221fb2d7',
+            _n: 'ZdsTtyMxbmIiQQQM',
+            org_ts: '1755211495'
+        });
+        
+        worker.onmessage = async function (event) {
+            const { _res, ps, tsp, _n, c } = event.data;
+            if (_res !== undefined) {
+                console.log('Worker result received');
+            }
+        };
+    </script>
+</body>
+</html>
